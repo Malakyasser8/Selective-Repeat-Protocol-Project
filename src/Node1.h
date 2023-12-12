@@ -26,6 +26,7 @@
 #include <bitset>
 #include <vector>
 #include <algorithm>
+#include <string>
 #include "MyMessage_m.h"
 
 using namespace std;
@@ -41,8 +42,10 @@ class Node1 : public cSimpleModule
     vector<string> TypeOfErrorsVector;
     vector<string> DataVector;
     vector<int> Acks;
+    vector<int>TimeOut;
     int currentSeqNumber=0;
     int expectedSeqNumber=1;
+    MyMessage_Base *test;
   protected:
     virtual void initialize() override;
     virtual void handleMessage(cMessage *msg) override;

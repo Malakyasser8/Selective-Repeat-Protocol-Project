@@ -16,11 +16,17 @@
 #ifndef __PROJECT_NODE0_H_
 #define __PROJECT_NODE0_H_
 
+#define DATA_TYPE 0
+#define ACK_TYPE  1
+#define NACK_TYPE 2
+
 #include <omnetpp.h>
 #include<iostream>
 #include <fstream>
 #include <bitset>
 #include <vector>
+#include <algorithm>
+#include <string>
 #include "MyMessage_m.h"
 
 using namespace std;
@@ -31,7 +37,8 @@ using namespace omnetpp;
 class Node0 : public cSimpleModule
 {
     public:
-        int seq_num=1;
+        int expectedSeqNumber=0;
+        vector<string> recievedFrames;
   protected:
     virtual void initialize() override;
     virtual void handleMessage(cMessage *msg) override;
