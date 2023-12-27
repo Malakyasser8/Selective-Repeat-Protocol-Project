@@ -13,6 +13,7 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
+
 #ifndef __PROJECT_NODE1_H_
 #define __PROJECT_NODE1_H_
 
@@ -45,7 +46,11 @@ class Node1 : public cSimpleModule
     vector<int>TimeOut;
     int currentSeqNumber=0;
     int expectedSeqNumber=1;
+    int expectedSeqNumberRec=0;
+    vector<string> recievedFrames;
     MyMessage_Base *test;
+    ofstream outputFile;
+    int ackCounter=0;
   protected:
     virtual void initialize() override;
     virtual void handleMessage(cMessage *msg) override;

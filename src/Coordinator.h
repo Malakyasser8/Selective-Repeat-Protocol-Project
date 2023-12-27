@@ -27,6 +27,8 @@ using namespace omnetpp;
  */
 class Coordinator : public cSimpleModule
 {
+  public:
+    ofstream outputFile;
   protected:
     virtual void initialize() override;
     virtual void handleMessage(cMessage *msg) override;

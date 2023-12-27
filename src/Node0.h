@@ -37,11 +37,20 @@ using namespace omnetpp;
 class Node0 : public cSimpleModule
 {
     public:
-        int expectedSeqNumber=0;
-        vector<string> recievedFrames;
-  protected:
-    virtual void initialize() override;
-    virtual void handleMessage(cMessage *msg) override;
+       vector<string> TypeOfErrorsVector;
+       vector<string> DataVector;
+       vector<int> Acks;
+       vector<int>TimeOut;
+       int currentSeqNumber=0;
+       int expectedSeqNumber=1;
+       int expectedSeqNumberRec=0;
+       vector<string> recievedFrames;
+       MyMessage_Base *test;
+       ofstream outputFile;
+       int ackCounter=0;
+     protected:
+       virtual void initialize() override;
+       virtual void handleMessage(cMessage *msg) override;
 };
 
 #endif

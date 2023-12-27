@@ -33,6 +33,9 @@ void Coordinator::initialize()
     cout<<"node number  "<<nodeNumber<<"  start time  "<<startTime<<endl;
     MyFile.close();
     scheduleAt(simTime()+startTime,new cMessage((to_string(nodeNumber)).c_str()));
+    outputFile.open("output.txt");
+    outputFile.close();
+
 }
 
 void Coordinator::handleMessage(cMessage *msg)

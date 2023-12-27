@@ -7,8 +7,8 @@ package project;
 network Network
 {
     parameters:
-        double WS;
-        double WR;
+        int WS;
+        int WR;
         double TO;
         double PT;
         double TD;
